@@ -12,4 +12,10 @@ function generateJoke() {
   });
 }
 
-export default generateJoke;
+function testImport() {
+  console.log("test");
+}
+
+let myName = "Sam";
+
+export { testImport as default };

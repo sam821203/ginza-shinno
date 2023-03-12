@@ -11,19 +11,29 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.7.3",
+    "postcss-loader": "^7.0.2",
+    "pug-html-loader": "^1.1.5",
+    "remove-webpack-plugin": "^1.2.2",
     "sass": "^1.58.3",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
-    "webpack-bundle-analyzer": "^4.8.0",
+    "url-loader": "^4.1.1",
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve"
+    "start": "webpack-dev-server --open"
   },
-  "author": "",
+  "author": "Fishing Hao",
   "license": "ISC"
 }
