@@ -1,20 +1,14 @@
-import testImport from "./generate-joke";
+// 載入 SCSS 樣式表
+import "./app.sass";
 
-// 載入 SASS 樣式表
-import "./app.scss";
-// import laughing from "./assets/laughing.svg";
-// import library from "./library";
+/**
+ * plugin js file
+ */
+import "./vendors/js/axios";
+// import "./vendors/js/swiper";
 
-// const laughImg = document.getElementById("laughImg");
-// laughImg.src = laughing;
-// const jokeBtn = document.getElementById("jokeBtn");
-// jokeBtn.addEventListener("click", generateJoke);
+// import "./vendors/js/swiper-bundle.esm.browser.min.js";
 
-// generateJoke();
-testImport();
-// console.log(myName);
-
-// let result1 = library.add(3, 4);
-// let result2 = library.multiply(5, 4);
-
-// console.log(result1, result2);
+// import "./pages/home/home";
+import { initHome } from "./pages/home/home";
+// initHome();

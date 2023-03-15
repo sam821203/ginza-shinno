@@ -1,16 +1,17 @@
 const path = require("path");
 // 清除目錄插件
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-// 資料搬移插件
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const RemoveWebpackPlugin = require("remove-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const isDev = process.env.NODE_ENV !== "production";
 
 module.exports = {
+  // devtool: "source-map",
+  devtool: isDev ? "inline-source-map" : "",
   // 建置的模式，預設是 production / development
-  mode: "development",
+  mode: "production",
   context: path.resolve(__dirname, "src"),
   // 入口
   entry: {
@@ -22,22 +23,25 @@ module.exports = {
     // filename: "js/[name].[contenthash].js",
 
     // 沒資料夾的配置
-    filename: "[name]-bindle.[contenthash].js",
+    filename: "[name]-bundle.[contenthash].js",
     path: path.resolve(__dirname, "dist/public"),
-    clean: true,
-    assetModuleFilename: "[name][ext]",
+    // clean: true,
+    // assetModuleFilename: "[name][ext]",
   },
-  // devtool: "source-map",
-  devtool: isDev ? "inline-source-map" : "",
+  // performance: {
+  //   hints: false,
+  //   maxEntrypointSize: 512000,
+  //   maxAssetSize: 512000,
+  // },
   devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
-    },
+    // static: {
+    //   directory: path.resolve(__dirname, "dist"),
+    // },
     port: 3000,
     open: true,
     hot: true,
     compress: true,
-    historyApiFallback: true,
+    // historyApiFallback: true,
   },
   // 模組載入規則
   module: {
@@ -63,93 +67,55 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader", // Translates CSS into CommonJS
           "postcss-loader",
-          // "style-loader", // Creates `style` nodes from JS strings
-          // 把 postcss-loader 放在 css-loader 前面 (第一步)
-          // {
-          //   loader: "postcss-loader",
-          //   options: {
-          //     // 傳遞 plugins 選項並載入 autoprefixer 做使用 (第二步)
-          //     plugins: [require("autoprefixer")],
-          //   },
-          // },
           "sass-loader", // Compiles Sass to CSS
         ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        // use: {
-        //   loader: "babel-loader",
-        //   options: {
-        //     presets: ["@babel/preset-env"],
-        //   },
-        // },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpe?g|gif)$/,
         exclude: path.resolve("./node_modules"),
         type: "asset/resource",
-        // use: [
-        //   {
-        //     loader: "url-loader",
-        //     options: {
-        //       limit: 8192,
-        //       name: "[path][name].[ext]?[hash:8]",
-        //     },
-        //   },
-        //   {
-        //     loader: "image-webpack-loader",
-        //     options: {
-        //       mozjpeg: {
-        //         progressive: true,
-        //         quality: 65,
-        //       },
-        //       optipng: {
-        //         enabled: false,
-        //       },
-        //       pngquant: {
-        //         quality: "65-90",
-        //         speed: 4,
-        //       },
-        //       gifsicle: {
-        //         interlaced: false,
-        //       },
-        //     },
-        //   },
-        // ],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              // 有資料夾的配置
+              // name: "img/[name].[ext]"
+
+              // 沒資料夾的配置
+              name: "[name].[ext]",
+            },
+          },
+        ],
       },
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "銀座しんのう",
-      filename: "index.html",
-      // template: "./template.html",
-      template: "./app.pug",
-      chunks: ["app"], // 根據 entry 的名字而定
-      minify: {
-        sortAttributes: true,
-        collapseWhitespace: false, // 折疊空白字元就是壓縮 Html
-        collapseBooleanAttributes: true, // 折疊布林值属性，例:readonly checked
-        removeComments: true, // 移除註釋
-        removeAttributeQuotes: true, // 移除屬性的引號
-      },
-    }),
     // 每次先清除前一次 build 的資料
     new CleanWebpackPlugin(),
-    // new RemoveWebpackPlugin("./public/"),
+    new HtmlWebpackPlugin({
+      title: "銀座しんのう",
+      template: "./app.pug",
+      filename: "index.html",
+      // chunks: ["vendor", "app"], // 根據 entry 的名字而定
+      // minify: {
+      //   sortAttributes: true,
+      //   collapseWhitespace: false, // 折疊空白字元就是壓縮 Html
+      //   collapseBooleanAttributes: true, // 折疊布林值属性，例:readonly checked
+      //   removeComments: true, // 移除註釋
+      //   removeAttributeQuotes: true, // 移除屬性的引號
+      // },
+    }),
     // 搬移靜態檔案
-    // new CopyWebpackPlugin(
-    //   {
-    //     patterns: [
-    //       { from: "css", to: "css" },
-    //       { from: "images", to: "images" },
-    //       { from: "assets", to: "assets" },
-    //     ],
-    //   },
-    //   { from: "src/assets/current", flatten: true }
-    // ),
-
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "assets/current", to: "assets/current" },
+        // { from: "other", to: "public" },
+      ],
+    }),
     new MiniCssExtractPlugin({
       // 有資料夾的配置
       // filename: "css/[name]-bundle.css",
@@ -158,16 +124,25 @@ module.exports = {
       filename: "[name]-bundle.css",
     }),
   ],
-  // optimization: {
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       vendor: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         name: "vendor",
-  //         chunks: "all",
-  //         enforce: true,
-  //       },
-  //     },
-  //   },
-  // },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: true,
+        parallel: true,
+      }),
+    ],
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "initial",
+          name: "vendors",
+          enforce: true,
+          priority: 10, // 預設為 0，必須大於預設 cacheGroups
+        },
+      },
+    },
+  },
 };

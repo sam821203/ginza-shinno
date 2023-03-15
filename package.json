@@ -23,15 +23,16 @@
     "mini-css-extract-plugin": "^2.7.3",
     "postcss-loader": "^7.0.2",
     "pug-html-loader": "^1.1.5",
-    "remove-webpack-plugin": "^1.2.2",
     "sass": "^1.58.3",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
+    "swiper": "^9.1.0",
+    "terser-webpack-plugin": "^5.3.7",
     "url-loader": "^4.1.1",
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode development",
     "start": "webpack-dev-server --open"
   },
   "author": "Fishing Hao",
