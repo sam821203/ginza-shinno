@@ -28,11 +28,11 @@ module.exports = {
     // clean: true,
     // assetModuleFilename: "[name][ext]",
   },
-  // performance: {
-  //   hints: false,
-  //   maxEntrypointSize: 512000,
-  //   maxAssetSize: 512000,
-  // },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   devServer: {
     // static: {
     //   directory: path.resolve(__dirname, "dist"),
@@ -100,6 +100,7 @@ module.exports = {
       title: "銀座しんのう",
       template: "./app.pug",
       filename: "index.html",
+      inject: "body",
       // chunks: ["vendor", "app"], // 根據 entry 的名字而定
       // minify: {
       //   sortAttributes: true,
@@ -133,14 +134,14 @@ module.exports = {
       }),
     ],
     splitChunks: {
-      chunks: "all",
+      // chunks: "all",
       cacheGroups: {
-        vendors: {
+        vendor: {
           test: /[\\/]node_modules[\\/]/,
-          chunks: "initial",
-          name: "vendors",
+          name: "vendor",
+          chunks: "all",
           enforce: true,
-          priority: 10, // 預設為 0，必須大於預設 cacheGroups
+          // priority: 10, // 預設為 0，必須大於預設 cacheGroups
         },
       },
     },
