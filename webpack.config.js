@@ -26,7 +26,7 @@ module.exports = {
     filename: "[name]-bundle.[contenthash].js",
     path: path.resolve(__dirname, "dist/public"),
     // clean: true,
-    // assetModuleFilename: "[name][ext]",
+    assetModuleFilename: "[name].[hash][ext]",
   },
   performance: {
     hints: false,
@@ -78,19 +78,24 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpe?g|gif)$/,
         exclude: path.resolve("./node_modules"),
         type: "asset/resource",
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              // 有資料夾的配置
-              // name: "img/[name].[ext]"
-
-              // 沒資料夾的配置
-              name: "[name].[ext]",
-            },
-          },
-        ],
       },
+      // {
+      //   test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpe?g|gif)$/,
+      //   exclude: path.resolve("./node_modules"),
+      //   type: "asset/resource",
+      //   use: [
+      //     {
+      //       loader: "file-loader",
+      //       options: {
+      //         // 有資料夾的配置
+      //         // name: "img/[name].[ext]"
+
+      //         // 沒資料夾的配置
+      //         name: "[name].[hash].[ext]",
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   plugins: [
@@ -111,12 +116,12 @@ module.exports = {
       // },
     }),
     // 搬移靜態檔案
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: "assets/current", to: "assets/current" },
-        // { from: "other", to: "public" },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     { from: "assets/current", to: "assets" },
+    //     // { from: "other", to: "public" },
+    //   ],
+    // }),
     new MiniCssExtractPlugin({
       // 有資料夾的配置
       // filename: "css/[name]-bundle.css",
