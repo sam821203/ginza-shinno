@@ -1,5 +1,6 @@
 @import "./vendors/css/swiper-custom"
 @import "./vendors/css/reset"
+@import "./utils/variable"
 
 *
   box-sizing: border-box
@@ -7,9 +8,58 @@
 body
   position: relative
   background-color: rgb(38, 38, 34)
-  font-family: "Roboto", sans-serif
-  color: #fff
-  overflow: hidden
+  font-family: "Roboto", serif
+  color: $gray-deep-light
+
+section
+  position: relative
+
+.section__zone
+  position: relative
+  &::before
+    content: "" 
+    display: block
+    width: 100%
+
+.section__zone > div
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+a
+  display: block
+  text-decoration: none
+  background-color: transparent
+  color: $gray-deep-light
+  &:active,
+  &:focus,
+  &:visited
+    color: $cta-text
+
+h2
+  margin-bottom: 40px
+  font-size: 40px
+  letter-spacing: 8px
+  text-shadow: 0px 0px 10px $gray-deep-dark
+
+h4
+  font-size: 22px
+
+h5
+  margin-bottom: 20px
+  font-size: 20px
+  letter-spacing: 2px
+
+h6
+  font-size: 18px
+
+img
+  max-width: 100%
+  height: auto
+  border: 0
+  vertical-align: middle
 
 .layout--main
   margin-left: auto
@@ -21,4 +71,8 @@ body
   height: 100%
 
 @import "./css/include/header"
+@import "./css/home"
 @import "./css/hero-section"
+@import "./css/about-section"
+@import "./css/rec-section"
+

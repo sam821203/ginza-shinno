@@ -6,9 +6,6 @@ import "./app.sass";
  */
 import "./vendors/js/axios";
 import "swiper/swiper-bundle.css";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
 
 // import "./vendors/js/swiper";
 

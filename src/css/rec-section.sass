@@ -1,0 +1,86 @@
+.rec-section
+  .section__zone
+    margin-left: auto
+    margin-right: auto
+    max-width: 1432px
+    &::before
+      padding-bottom: 70%
+  .title__wrap
+    text-align: center
+  .content__wrap
+    margin-top: 160px
+  .cards
+    display: flex
+    justify-content: space-between
+    .card
+      position: relative
+      width: calc( 33% - 20px )
+      height: 100%
+      padding: 2% 3% 4%
+      background-color: transparent
+      transition: all .4s ease
+
+      &::before,
+      &::after
+        content: ""
+        position: absolute
+        z-index: 2
+        width: 72%
+        height: 72%
+        background-color: transparent
+        border: 1px solid $gray-deep-light
+
+      &::before
+        top: 1%
+        left: 1%
+
+      &::after
+        top: 2%
+        left: 2%
+        
+      .card__img
+        margin-bottom: 20px
+        overflow: hidden
+        transform: scale(1)
+        transform-origin: center bottom
+        transition: all .5s ease
+        img
+          object-fit: cover
+        &::before
+          content: ""
+          position: absolute
+          bottom: 0
+          display: block
+          width: 100%
+          height: 209px
+          background-image: linear-gradient(to bottom,  rgba(10, 10,10, 0), rgba(10, 10,10,1))
+          background-size: auto
+          font-size: 0
+          opacity: 0
+          transition: all .5s ease
+
+      .card__content
+        margin-bottom: 40px
+        h4
+          margin-bottom: 20px
+          line-height: 40px
+        p
+          line-height: 32px
+          text-align: justify
+          color: $gray-light
+
+      .card__price
+        text-align: right
+        letter-spacing: 0.8px
+        color: $cta-text
+
+      &:nth-child(2)
+        margin-top: 40px
+      &:last-child
+        margin-top: 80px
+      &:hover
+        background-color: $gray-deep-dark
+        .card__img
+          transform: scale(1.1)  
+          &::before
+            opacity: 1

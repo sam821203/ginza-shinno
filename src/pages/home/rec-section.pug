@@ -1,0 +1,44 @@
+-
+  var recSectionData = [
+    {
+      link: "#",
+      imgSrc: "assets/current/rec-card-1.jpg",
+      alt: "薬膳チーズキーマカレー",
+      content: "キーマカレーにオリジナルチーズソースをトッピング薬膳ドレッシングサラダ・薬膳茶付きご飯大盛り無料。",
+      price: "¥ 1500"
+    },
+    {
+      link: "#",
+      imgSrc: "assets/current/rec-card-2.jpg",
+      alt: "薬膳キーマカレー",
+      content: "お砂糖の代わりに生薬を用いるなど、約25種類の生薬・スパイスを使用した味わい深い一品。合いびき肉と香味野菜たっぷりのカレーに合わせるのは、オーナーの地元・岩手県産の特別栽培米「ひとめぼれ」です。",
+      price: "¥ 1500"
+    },
+    {
+      link: "#",
+      imgSrc: "assets/current/rec-card-3.jpg",
+      alt: "ポキ丼",
+      content: "金木犀香る和風アボカドマグロ丼 温玉乗せ。アボカドが気を巡らせ、マグロが血を補い、金木犀が身体を温めます。薬膳ドレッシングサラダ・薬膳茶付きご飯大盛り無料。",
+      price: "¥ 1500"
+    },
+  ]
+
+section.rec-section
+  .layout--main
+    .section__wrap 
+      .section__zone
+        .title__wrap
+          h5 RECOMMENDATION
+          h2 おすすめメニュー
+        .content__wrap
+          ul.cards
+            each data in recSectionData
+              li.card
+                a(href= data.link, title= data.alt) 
+                  .card__img 
+                    img(src= data.imgSrc, alt= data.alt)
+                  .card__content 
+                    h4= data.alt
+                    p= data.content
+                  .card__price 
+                    span= data.price

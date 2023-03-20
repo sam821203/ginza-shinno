@@ -3,30 +3,36 @@
 // import Swiper, { Navigation, Pagination } from "swiper";
 import Swiper from "swiper/bundle";
 
-export const initHome = [test()];
+export const initHome = [homeSwiperReady()];
 
-function test() {
+function homeSwiperReady() {
   const progressCircle = document.querySelector(".autoplay-progress svg");
   const progressContent = document.querySelector(".autoplay-progress span");
+  const sliders = [
+    "01 銀座",
+    "02 料理",
+    "03 ランチ",
+    "04 ドリンク",
+    "05 コース",
+  ];
+
   var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
-      delay: 2500,
+      delay: 3000,
       disableOnInteraction: false,
+    },
+    loop: true,
+    speed: 1800,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
     },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    on: {
-      autoplayTimeLeft(s, time, progress) {
-        progressCircle.style.setProperty("--progress", 1 - progress);
-        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+      renderBullet: function (index, className) {
+        return '<div class="' + className + '">' + sliders[index] + "</div>";
       },
     },
   });

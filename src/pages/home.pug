@@ -1,35 +1,21 @@
-doctype html
-html(lang='zh-Hant-TW')
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title HomePage
-  body 
-    include ./include/header.pug
 
-    .decor__bg.full-parent
-      .swiper.mySwiper
-        .swiper-wrapper
-          .swiper-slide
-            img(src='https://swiperjs.com/demos/images/nature-1.jpg')
-          .swiper-slide
-            img(src='https://swiperjs.com/demos/images/nature-2.jpg')
-          .swiper-slide
-            img(src='https://swiperjs.com/demos/images/nature-3.jpg')
-          .swiper-slide
-            img(src='https://swiperjs.com/demos/images/nature-4.jpg')
-          .swiper-slide
-            img(src='https://swiperjs.com/demos/images/nature-5.jpg')
-        .swiper-button-next
-        .swiper-button-prev
-        .swiper-pagination
-        .autoplay-progress
-          svg(viewbox='0 0 48 48')
-            circle(cx='24' cy='24' r='20')
-          span
+include ./include/header.pug
 
+.decor__bg.full-parent
+  .swiper.mySwiper
+    ul.swiper-wrapper
+      li.swiper-slide
+        img(src='assets/current/hero-slider-1.jpg')
+      li.swiper-slide
+        img(src='assets/current/hero-slider-2.jpg')
+      li.swiper-slide
+        img(src='assets/current/hero-slider-3.jpg')
+      li.swiper-slide
+        img(src='assets/current/hero-slider-4.jpg')
+      li.swiper-slide
+        img(src='assets/current/hero-slider-5.jpg')
+    .swiper-pagination
 
-    include ./hero-section.pug
-
-    //- include /event/2nd/e-main/components/hero-section/_hero-section
+include ./home/hero-section.pug
+include ./home/about-section.pug
+include ./home/rec-section.pug
