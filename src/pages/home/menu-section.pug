@@ -1,0 +1,73 @@
+-
+  var menuSectionData = [
+    {
+      link: "#",
+      imgSrc1: "assets/current/menu-box-1.jpg",
+      imgSrc2: "assets/current/menu-box-2.jpg",
+      alt: "料理",
+      subtitle: "DISH",
+      title: "料理",
+      paragraph1: "東銀座の裏路地にひっそり",
+      paragraph2: "オリジナル薬酒をり",
+      paragraph3: "選りすぐりの薬膳をご自宅",
+    },
+    {
+      link: "#",
+      imgSrc1: "assets/current/menu-box-3.jpg",
+      imgSrc2: "assets/current/menu-box-4.jpg",
+      alt: "ランチ",
+      subtitle: "LUNCH",
+      title: "ランチ",
+      paragraph1: "東銀座の裏路地にひっそり",
+      paragraph2: "オリジナル薬酒をり",
+      paragraph3: "選りすぐりの薬膳をご自宅",
+    },
+    {
+      link: "#",
+      imgSrc1: "assets/current/menu-box-5.jpg",
+      imgSrc2: "assets/current/menu-box-6.jpg",
+      alt: "ドリンク",
+      subtitle: "DRINK",
+      title: "ドリンク",
+      paragraph1: "東銀座の裏路地にひっそり",
+      paragraph2: "オリジナル薬酒をり",
+      paragraph3: "選りすぐりの薬膳をご自宅",
+    },
+    {
+      link: "#",
+      imgSrc1: "assets/current/menu-box-7.jpg",
+      imgSrc2: "assets/current/menu-box-8.jpg",
+      alt: "コース",
+      subtitle: "COURSE",
+      title: "コース",
+      paragraph1: "東銀座の裏路地にひっそり",
+      paragraph2: "オリジナル薬酒をり",
+      paragraph3: "選りすぐりの薬膳をご自宅",
+    },
+  ]
+
+section.menu-section
+  .section__wrap 
+    .section__zone
+      .title__wrap
+        h5 MENU
+        h2 おすすめメニュー
+      .content__wrap
+        ul.boxes
+          each data in menuSectionData
+            li.box
+              .box__img
+                img(src= data.imgSrc1, alt= data.alt)
+              .box__content
+                .box__content--img
+                  img(src= data.imgSrc2, alt= data.alt)
+                .box__content--top
+                  .box__content--subtitle= data.subtitle
+                  .box__content--title
+                    h3= data.title 
+                  p.box__content--paragraph= data.paragraph1 
+                  p.box__content--paragraph= data.paragraph2 
+                  p.box__content--paragraph= data.paragraph3 
+                .box__content--bottom
+                  .view-more
+                    a(href= data.link, title= data.alt) view more

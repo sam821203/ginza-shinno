@@ -1,0 +1,83 @@
+.menu-section
+  margin-bottom: 104px
+
+  .section__zone
+    &::before
+      padding-bottom: 193%
+  .title__wrap
+    text-align: center
+  .content__wrap
+    margin-top: 160px
+    .box
+      display: flex
+      & > div
+        width: 50%
+      &:nth-child(odd)
+        flex-direction: row-reverse
+        
+    .box__content
+      position: relative
+      .box__content--img
+        width: 100%
+        &::before
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background-color: $gray-deep-dark
+          opacity: 0.85
+      .box__content--top
+        position: absolute
+        top: 40%
+        left: 50%
+        display: flex
+        flex-direction: column-reverse
+        writing-mode: vertical-lr
+        text-orientation: mixed
+        transform: translate(-50%, -40%)
+        .box__content--subtitle
+          margin-left: 10px
+          font-family: sans-serif
+          letter-spacing: 0.8px
+          color: $gray-deep-light
+        .box__content--title
+          position: relative
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 130px
+          height: 270px
+          margin-left: 60px
+          background-color: rgba(0, 0, 0, 0.6)
+          h3
+            margin-top: 18px
+          &::before,
+          &::after
+            content: ""
+            position: absolute
+            width: 82%
+            height: 90%
+            border: 1px solid rgba(255, 255, 255, 1)
+          &::before
+            top: 3.5%
+            left: 5.5%
+          &::after
+            top: 5.5%
+            left: 10.5%
+        .box__content--paragraph
+          font-size: 18px
+          letter-spacing: 3.6px
+          line-height: 30px
+          color: $gray-light
+
+      .box__content--bottom
+        position: absolute
+        bottom: 6%
+        left: 50%
+        transform: translateX(-50%)
+
+
+        
+

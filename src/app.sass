@@ -14,20 +14,6 @@ body
 section
   position: relative
 
-.section__zone
-  position: relative
-  &::before
-    content: "" 
-    display: block
-    width: 100%
-
-.section__zone > div
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-
 a
   display: block
   text-decoration: none
@@ -43,6 +29,11 @@ h2
   font-size: 40px
   letter-spacing: 8px
   text-shadow: 0px 0px 10px $gray-deep-dark
+
+h3
+  font-size: 30px
+  letter-spacing: 16px
+  line-height: 50px
 
 h4
   font-size: 22px
@@ -70,9 +61,40 @@ img
   width: 100%
   height: 100%
 
+.section__zone
+  position: relative
+  &::before
+    content: "" 
+    display: block
+    width: 100%
+
+.section__zone > div
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.view-more
+  width: 200px
+  height: 50px
+  background-color: $gray-deep-dark
+  font-family: sans-serif
+  color: $cta-text
+  letter-spacing: 0.8px
+  font-size: 16px
+  text-transform: uppercase
+  a
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+
 @import "./css/include/header"
 @import "./css/home"
 @import "./css/hero-section"
 @import "./css/about-section"
 @import "./css/rec-section"
-
+@import "./css/menu-section"
+@import "./css/access-section"
