@@ -1,25 +1,27 @@
-.about-section
-  .section__zone
-    &::before
-      padding-bottom: 69%
+.access-section
   .decor__wrap
-    transform: translateY(150px)
-    .decor__wrap--right
-      text-align: right
-      transform: translateY(-12%)
+    position: absolute
+    top: 84%
+    left: 50%
+    width: 80%
+    height: 520px
+    transform: translate(-50%, -50%)
   .text__wrap
+    position: absolute
     top: 50%
     left: 50%
     display: flex
     justify-content: center
-    width: 72%
-    height: 740px
+    width: 60%
+    height: 930px
     background-color: rgba(0, 0, 0, 0.3)
     transform: translate(-50%, -50%)
     .text__box
       display: flex
       flex-direction: column
       justify-content: center
+      width: 74%
+      height: 100%
       p
         margin-bottom: 60px
         font-size: 18px
@@ -41,6 +43,35 @@
     &::after
       top: 5%
       left: 3%
+
+  .list__item
+    display: flex
+    justify-content: space-between
+    align-items: start
+    padding-top: 24px
+    padding-bottom: 24px
+    letter-spacing: 0.8px
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+    .list__item--left
+      width: 28%
+      font-size: 20px
+      letter-spacing: 2px
+      line-height: 34px
+      text-align: right
+    .list__item--right
+      width: 72%
+      padding-left: 6%
+      line-height: 32px
+      color: $gray-light
+      span
+        // display: inline-block
+        color: $gray-deep-light
+    &:first-child
+      border-top: 1px solid rgba(255, 255, 255, 0.3)    
+      .list__item--right
+        width: 22%
+      .list__item--btn
+        width: 50%  
       
     
     
