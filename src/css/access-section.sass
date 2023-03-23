@@ -1,14 +1,28 @@
 .access-section
+  height: auto
+  .section__wrap
+    background-image: linear-gradient(45deg, transparent, transparent)
+    background-size: 100%
+    background-repeat: no-repeat
+  .section__zone
+    position: relative
+    &::before
+      content: ""
+      display: block
+      width: 100%
+      padding-bottom: 80%
   .decor__wrap
     position: absolute
-    top: 84%
+    top: 80%
     left: 50%
     width: 80%
     height: 520px
     transform: translate(-50%, -50%)
+  // .map
+  //   filter: grayscale(100%) invert(95%)
   .text__wrap
     position: absolute
-    top: 50%
+    top: 34%
     left: 50%
     display: flex
     justify-content: center

@@ -106,6 +106,7 @@ module.exports = {
       template: "./app.pug",
       filename: "index.html",
       inject: "body",
+      // inject: false,
       // chunks: ["vendor", "app"], // 根據 entry 的名字而定
       // minify: {
       //   sortAttributes: true,
