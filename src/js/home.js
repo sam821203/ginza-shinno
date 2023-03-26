@@ -5,6 +5,7 @@ import Swiper from "swiper/bundle";
 
 export const initHome = [
   homeSwiperReady(),
+  scrollHeader(),
   // initMap(),
   // window.addEventListener("DOMContentLoaded", loadGoogleSyndication),
   // window.addEventListener("DOMContentLoaded", initMap),
@@ -246,4 +247,25 @@ function loadGoogleSyndication() {
     "beforeend",
     "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCdW_2w4vvqv2Z1uNWQv3xbGt-oZyMQSGA&callback=initMap' async defer></script>"
   );
+}
+
+function scrollHeader() {
+  const header = document.getElementById("header");
+  const headerLeft = document.getElementById("headerLeft");
+  const headerMiddleItems = document.getElementById("headerMiddleItems");
+  const headerMiddleImg = document.getElementById("headerMiddleImg");
+  const headerRight = document.getElementById("headerRight");
+
+  const scrollHeight = 120;
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > scrollHeight) {
+      header.classList.add("header__scroll");
+      headerMiddleItems.style.opacity = 0;
+      headerMiddleImg.style.opacity = 1;
+    } else {
+      header.classList.remove("header__scroll");
+      headerMiddleItems.style.opacity = 1;
+      headerMiddleImg.style.opacity = 0;
+    }
+  });
 }

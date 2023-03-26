@@ -5,3 +5,31 @@ $gray-deep-light: #fff;
 $gray-light: rgb(170, 170, 170);
 
 $cta-text: rgb(217, 181, 74);
+
+// Breakpoint min & max value
+// ========================================================================== */
+$min-width-3xs: 280px;
+$min-width-xxs: 320px;
+$min-width-xs: 360px;
+$min-width-sm: 400px;
+$min-width-md: 480px;
+$min-width-lg: 768px;
+$min-width-xl: 960px;
+$min-width-xxl: 1260px;
+$min-width-3xl: 1368px;
+$min-width-4xl: 1920px;
+$min-width-5xl: 2556px;
+$min-width-6xl: 3840px;
+
+$max-width-3xs: 280px;
+$max-width-xxs: 320px;
+$max-width-xs: 396px;
+$max-width-sm: 440px;
+$max-width-md: 600px;
+$max-width-lg: 768px;
+$max-width-xl: 960px;
+$max-width-xxl: 1260px;
+$max-width-3xl: 1440px;
+$min-width-4xl: 1920px;
+$max-width-5xl: 2560px;
+$min-width-6xl: 3840px;

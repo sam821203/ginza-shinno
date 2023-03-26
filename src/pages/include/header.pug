@@ -1,15 +1,40 @@
-.header
-  .header__left 
+nav#header
+  .header__left#headerLeft
     .header__box
       .header__left--icon 
         .line
         .line 
         .line 
       .header__left--text MENU
-  .header__middle 
-    .header__middle--img
+        ul
+          li 
+            a(href="") ABOUT
+          li 
+            a(href="") ABOUT
+          li 
+            a(href="") ABOUT
+          li 
+            a(href="") ABOUT
+          li 
+            a(href="") ABOUT
+
+  .header__middle
+    ul.header__middle--items#headerMiddleItems
+      li 
+        a(href="") ABOUT
+      li 
+        a(href="") MENU
+      li
+        a(href="")
+          img(src="assets/current/icon-Logo.png", alt="")
+      li 
+        a(href="") ACCESS
+      li 
+        a(href="") CONTACT
+    .header__middle--img#headerMiddleImg
       img(src="assets/current/nav-logo.png", alt="")
-  .header__right
+
+  .header__right#headerRight
     .header__right--img
       img(src="assets/current/nav-reservation.png", alt="")
     .header__right--text 預約
