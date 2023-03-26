@@ -22,13 +22,27 @@ nav
     height: 100%
   .header__left
     border-right: 1px solid rgba(255, 255, 255, 0.3)
-    .line
-      width: 82%
-      height: 2px
-      margin-left: auto
-      margin-right: auto
-      margin-bottom: 6px
-      background-color: #fff
+    .header__left--icon
+      .line
+        width: 82%
+        height: 2px
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 6px
+        background-color: #fff
+    .header__menu
+      position: absolute
+      top: 80px
+      left: 0
+      .menu__items
+        width: 300px
+        height: auto
+        padding: 30px 20px
+        background-color: $gray-deep-dark
+        transition: transform .5s ease
+        transform: translateX(-200%)
+        &.menu__items--active
+          transform: translateX(0)
   .header__middle 
     display: none
     .header__middle--img

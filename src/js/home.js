@@ -6,6 +6,7 @@ import Swiper from "swiper/bundle";
 export const initHome = [
   homeSwiperReady(),
   scrollHeader(),
+  toggleMenu(),
   // initMap(),
   // window.addEventListener("DOMContentLoaded", loadGoogleSyndication),
   // window.addEventListener("DOMContentLoaded", initMap),
@@ -267,5 +268,15 @@ function scrollHeader() {
       headerMiddleItems.style.opacity = 1;
       headerMiddleImg.style.opacity = 0;
     }
+  });
+}
+
+function toggleMenu() {
+  const headerBox = document.getElementById("headerBox");
+  // const headerMenu = document.getElementById("headerMenu");
+  const menuItems = document.querySelector(".menu__items");
+
+  headerBox.addEventListener("click", () => {
+    menuItems.classList.toggle("menu__items--active");
   });
 }
