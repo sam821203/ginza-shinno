@@ -4,6 +4,11 @@ html(lang='zh-Hant-TW')
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Sawarabi+Mincho&display=swap' rel='stylesheet')
+    link(href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet')
+
     title 銀座しんのう
   body 
 
@@ -11,6 +16,7 @@ html(lang='zh-Hant-TW')
     include ./pages/home.pug
 
     script(src='https://apps.elfsight.com/p/platform.js' defer='')
+    script(src='https://unpkg.com/aos@2.3.1/dist/aos.js' defer='')
     //- script(type="text/javascript" src='./js/map.js')
     //- script(async='' defer='' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCdW_2w4vvqv2Z1uNWQv3xbGt-oZyMQSGA&callback=initMap')
     //- script(async='' defer='' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCdW_2w4vvqv2Z1uNWQv3xbGt-oZyMQSGA&callback=initMap')

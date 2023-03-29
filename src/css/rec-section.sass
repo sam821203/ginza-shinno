@@ -7,17 +7,25 @@
     text-align: center
   .content__wrap
     height: auto
-    margin-top: 60px
+    // margin-top: 60px
   .cards
     display: flex
     justify-content: space-between
+    flex-direction: column
+    +breakpoint-min($min-width-lg)
+      flex-direction: row
     .card
       position: relative
-      width: calc( 33% - 20px )
-      height: 100%
-      padding: 2% 3% 4%
+      +size(100%)
+      padding: 2% 1.5% 4%
       background-color: transparent
-      transition: all .4s ease
+      // transition: all .4s ease
+      +breakpoint-min($min-width-lg)
+        width: 33%
+        padding: 2% 1.5%
+      +breakpoint-min($min-width-xl)
+        padding: 2% 3% 4%
+        width: calc( 33% - 20px )
 
       &::before,
       &::after
@@ -62,7 +70,9 @@
           transition: all .5s ease
 
       .card__content
-        margin-bottom: 40px
+        margin-bottom: 6%
+        +breakpoint-min($min-width-xl)
+          margin-bottom: 40px
         h4
           margin-bottom: 16px
           line-height: 40px
@@ -77,9 +87,9 @@
         color: $cta-text
 
       &:nth-child(2)
-        margin-top: 40px
+        margin-top: 3%
       &:last-child
-        margin-top: 80px
+        margin-top: 6%
       &:hover
         background-color: $gray-deep-dark
         &::before,

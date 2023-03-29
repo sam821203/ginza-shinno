@@ -6,6 +6,18 @@ $gray-light: rgb(170, 170, 170);
 
 $cta-text: rgb(217, 181, 74);
 
+// Font family setting -- powered by bootstrap
+// ========================================================================== */
+$font-family-sans-serif: PingFangTC-regular, "LiHei Pro", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+  "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-family-en: "Josefin Sans", sans-serif !default;
+
 // Breakpoint min & max value
 // ========================================================================== */
 $min-width-3xs: 280px;

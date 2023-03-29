@@ -9,39 +9,78 @@
         content: ""
         display: block
         width: 100%
-        padding-bottom: 62%
+        padding-bottom: 186%
+        +breakpoint-min($min-width-lg)
+          padding-bottom: 120%
+        +breakpoint-min($min-width-xl)
+          padding-bottom: 104%
+        +breakpoint-min($min-width-xxl)
+          padding-bottom: 84%
+        +breakpoint-min($min-width-3xl)
+          padding-bottom: 62%
+
   .decor__wrap
     position: absolute
-    top: 150px
+    top: 5%
+    +breakpoint-min($min-width-xxl)
+      top: 150px
+    .decor__wrap--left
+      width: 40%
     .decor__wrap--right
+      width: 48%
+      margin-left: auto
       text-align: right
-      transform: translateY(-12%)
+      transform: translateY(261%)
+      +breakpoint-min($min-width-lg)
+        transform: translateY(119%)
+      +breakpoint-min($min-width-xl)
+        width: 52%
+        transform: translateY(92%)
+      +breakpoint-min($min-width-xxl)
+        transform: translateY(-12%)
   .text__wrap
     position: absolute
-    top: 56%
+    top: 50%
     left: 50%
     display: flex
     justify-content: center
-    width: 72%
-    height: 740px
+    +size(94%, auto)
     background-color: rgba(0, 0, 0, 0.3)
+    // filter: blur(4px)
     transform: translate(-50%, -50%)
+    +breakpoint-min($min-width-xl)
+      top: 50%
+    +breakpoint-min($min-width-xxl)
+      top: 56%
+      left: 50%
+      +size(72%, 690px)
+      transform: translate(-50%, -50%)
+
     .text__box
       display: flex
-      flex-direction: column
       justify-content: center
+      flex-direction: column
+      width: 100%
+      padding: 15% 7% 13%
+      +breakpoint-min($min-width-xl)
+        width: 76%
+        +padding-x(0)
+      +breakpoint-min($min-width-xxl)
+        padding: 0
+      +breakpoint-min($min-width-3xl)
+        width: 62%
       p
-        margin-bottom: 60px
-        font-size: 18px
-        line-height: 50px
-        color: $gray-light
+        margin-bottom: 12%
+        line-height: 42px
+        +breakpoint-min($min-width-xl)
+          margin-bottom: 60px
+          line-height: 50px
           
     &::before,
     &::after
       content: ""
       position: absolute
-      width: 95%
-      height: 92%
+      +size(95%, 92%)
       border: 1px solid $gray-deep-light
       opacity: 0.3
       pointer-events: none
@@ -50,7 +89,10 @@
       left: 2%
     &::after
       top: 5%
-      left: 3%
+      left: 3.3%
+      +breakpoint-min($min-width-3xl)
+        left: 3%
+
       
     
     

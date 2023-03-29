@@ -11,3 +11,34 @@
     @content;
   }
 }
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-container($x-axis: center, $y-axis: $x-axis) {
+  display: flex;
+  justify-content: $x-axis;
+  align-items: $y-axis;
+}
+
+@mixin padding-y($top, $bottom: $top) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin padding-x($left, $right: $left) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin margin-y($top, $bottom: $top) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+@mixin margin-x($left, $right: $left) {
+  margin-left: $left;
+  margin-right: $right;
+}
