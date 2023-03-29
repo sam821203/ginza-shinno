@@ -26,10 +26,16 @@
 
 .swiper-pagination 
 	position: absolute 
-	top: 66.5% !important
-	left: 86.8% !important
+	top: 71.5% !important
+	left: 72% !important
 	width: 150px !important
 	margin: 0 
+	+breakpoint-min($min-width-xl)
+		top: 66.5% !important
+		left: 78% !important
+	+breakpoint-min($min-width-3xl)
+		left: 86.8% !important
+
 .swiper-pagination-bullet 
 	position: relative
 	width: 100%

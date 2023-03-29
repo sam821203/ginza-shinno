@@ -62,12 +62,12 @@ section.menu-section
                 .box__content--img
                   img(src= data.imgSrc2, alt= data.alt)
                 .box__content--top
-                  .box__content--subtitle= data.subtitle
-                  .box__content--title
+                  .box__content--subtitle(data-aos="fade-up")= data.subtitle
+                  .box__content--title(data-aos="fade-up")
                     h3= data.title 
-                  p.box__content--paragraph= data.paragraph1 
-                  p.box__content--paragraph= data.paragraph2 
-                  p.box__content--paragraph= data.paragraph3 
+                  p.box__content--paragraph(data-aos="fade-up")= data.paragraph1 
+                  p.box__content--paragraph(data-aos="fade-up")= data.paragraph2 
+                  p.box__content--paragraph(data-aos="fade-up")= data.paragraph3 
                 .box__content--bottom
-                  .view-more
+                  .view-more(data-aos="fade-up" data-aos-duration="800")
                     a(href= data.link, title= data.alt) view more

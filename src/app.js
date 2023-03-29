@@ -13,6 +13,13 @@ import "swiper/swiper-bundle.css";
 
 // import "./pages/home/home";
 import { initHome } from "./js/home";
+// AOS.init();
+AOS.init({
+  // offset: 180,
+  duration: 1000,
+  once: true,
+  easing: "ease-out",
+});
 
 // var map;
 // function initMap() {
