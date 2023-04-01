@@ -7,15 +7,10 @@ import "./app.sass";
 import "./vendors/js/axios";
 import "swiper/swiper-bundle.css";
 
-// import "./vendors/js/swiper";
-
-// import "./vendors/js/swiper-bundle.esm.browser.min.js";
-
-// import "./pages/home/home";
 import { initHome } from "./js/home";
-// AOS.init();
+// import { initLazyload } from "./js/lazyload";
+
 AOS.init({
-  // offset: 180,
   duration: 1000,
   once: true,
   easing: "ease-out",
