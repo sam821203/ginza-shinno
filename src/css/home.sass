@@ -25,14 +25,19 @@
 		display: block
 
 .swiper-pagination 
-	position: absolute 
-	top: 71.5% !important
-	left: 72% !important
-	width: 150px !important
+	position: absolute
+	top: 88% !important
+	left: 37% !important
+	display: flex
+	justify-content: space-between
+	align-items: center
+	width: 28% !important
 	margin: 0 
 	+breakpoint-min($min-width-xl)
 		top: 66.5% !important
 		left: 78% !important
+		display: block
+		width: 150px !important
 	+breakpoint-min($min-width-3xl)
 		left: 86.8% !important
 
@@ -40,18 +45,19 @@
 	position: relative
 	width: 100%
 	height: 30px 
-	margin-bottom: 16px !important
-	margin-left: 0 !important
+	margin: 0 !important
 	background-color: transparent
 	font-size: 20px
 	letter-spacing: 1px
-	text-align: left
+	text-align: center
 	line-height: 160%
 	color: #fff 
 	border-radius: 0
 	opacity: 0.5
+	+breakpoint-min($min-width-xl)
+		margin-bottom: 16px !important
+		text-align: left
 	&::after
-		content: ""
 		position: absolute
 		left: 0
 		bottom: 0
@@ -59,6 +65,9 @@
 		height: 1px
 		background-color: #fff
 		transition: width .8s ease-out
+		+breakpoint-min($min-width-xl)
+			content: ""
+
 .swiper-pagination-bullet-active 
 	background-color: transparent
 	opacity: 1 

@@ -8,19 +8,17 @@ export const initHome = [
   scrollHeader(),
   toggleMenu(),
   stopEappsLinkTimer(),
-  // initMap(),
   // window.addEventListener("DOMContentLoaded", loadGoogleSyndication),
   // window.addEventListener("DOMContentLoaded", initMap),
 ];
 
 function homeSwiperReady() {
-  const sliders = [
-    "01 銀座",
-    "02 料理",
-    "03 ランチ",
-    "04 ドリンク",
-    "05 コース",
-  ];
+  let sliders;
+  if (window.innerWidth > 960) {
+    sliders = ["01 銀座", "02 料理", "03 ランチ", "04 ドリンク", "05 コース"];
+  } else {
+    sliders = ["•", "•", "•", "•", "•"];
+  }
 
   var swiper = new Swiper(".mySwiper", {
     centeredSlides: true,
@@ -45,21 +43,16 @@ function homeSwiperReady() {
 }
 
 // 隱藏 eapps-link
-function hideEappsLink() {
-  const eappsLink = document.querySelector(".eapps-link");
-  eappsLink.style.display = "none";
-}
-
-const timer = setTimeout(hideEappsLink, 1000);
-
 var eappsLinkTimer;
 
 function exeEappsLinkTimer() {
   eappsLinkTimer = setTimeout(function () {
     const eappsLink = document.querySelector(".eapps-link");
     eappsLink.style.display = "none";
-  }, 1500);
+  }, 2000);
 }
+
+exeEappsLinkTimer();
 
 function stopEappsLinkTimer() {
   clearTimeout(eappsLinkTimer);
@@ -88,18 +81,21 @@ function scrollHeader() {
   const menuItems = document.querySelector(".menu__items");
 
   const scrollHeight = 120;
-  window.addEventListener("scroll", () => {
-    const isScrolled = window.pageYOffset > scrollHeight;
 
-    header.classList.toggle("header__scroll", isScrolled);
-    menuItems.classList.remove("menu__items--active");
-    headerMiddleItems.style.opacity = isScrolled ? 0 : 1;
-    headerLeft.style.opacity = isScrolled ? 1 : 0;
-    headerLeft.style.pointerEvents = isScrolled ? "auto" : "none";
-    headerRight.style.opacity = isScrolled ? 1 : 0;
-    headerRight.style.pointerEvents = isScrolled ? "auto" : "none";
-    headerMiddleImg.style.opacity = isScrolled ? 1 : 0;
-  });
+  if (window.innerWidth > 960) {
+    window.addEventListener("scroll", () => {
+      const isScrolled = window.pageYOffset > scrollHeight;
+
+      header.classList.toggle("header__scroll", isScrolled);
+      menuItems.classList.remove("menu__items--active");
+      headerMiddleItems.style.opacity = isScrolled ? 0 : 1;
+      headerLeft.style.opacity = isScrolled ? 1 : 0;
+      headerLeft.style.pointerEvents = isScrolled ? "auto" : "none";
+      headerRight.style.opacity = isScrolled ? 1 : 0;
+      headerRight.style.pointerEvents = isScrolled ? "auto" : "none";
+      headerMiddleImg.style.opacity = isScrolled ? 1 : 0;
+    });
+  }
 }
 
 function toggleMenu() {

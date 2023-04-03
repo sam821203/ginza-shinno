@@ -78,9 +78,15 @@
     &::before
       top: 3%
       left: 2%
+      +breakpoint-min($min-width-xl)
+        top: 3%
+        left: 1.7%
     &::after
-      top: 5%
-      left: 3%
+      top: 4%
+      left: 4%
+      +breakpoint-min($min-width-xl)
+        top: 5%
+        left: 3.3%
 
   .list__item
     display: flex

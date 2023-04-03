@@ -4,7 +4,7 @@ nav
   left: 0
   z-index: 2
   +flex-container(space-between, center)
-  +size(100vw, 70px)
+  +size(100vw, 62px)
   background-color: rgba(10, 10, 10, 0.6)
   border-bottom: 1px solid rgba(255, 255, 255, 0.3)
   +breakpoint-min($min-width-xxl)
@@ -13,7 +13,7 @@ nav
   .header__left,
   .header__right
     +flex-container(center)
-    +size(74px, 100%)
+    +size(68px, 100%)
     opacity: 1
     transition: all .8s ease-out
     pointer-events: auto
@@ -43,40 +43,89 @@ nav
       cursor: pointer
     .header__menu
       position: absolute
-      top: 70px
+      top: 62px
       left: 0
-      opacity: 0
-      transition: opacity .4s ease-out
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      +size(100vw, calc(100vh - 62px))
+      +padding-y(8%, 2%)
+      background-color: $gray-deep-dark
+      transform: translateX(-100%)
+      transition: all .4s ease-out
       pointer-events: none
       +breakpoint-min($min-width-xl)
         top: 80px
+        +size(28vw, calc(100vh - 80px))
+        +padding-y(6%, 4%)
       .menu__items
         +flex-container(center)
         flex-direction: column
-        +size(100vw, 100vh)
-        background-color: $gray-deep-dark
+        font-size: 16px
+        line-height: 50px
+        letter-spacing: 2.4px
+        +breakpoint-min($min-width-lg)
+          font-size: 20px
+        +breakpoint-min($min-width-3xl)
+          font-size: 24px
         .menu__item
-          margin-bottom: 60px
+          position: relative
+          margin-bottom: 8%
           font-family: $font-family-en
           line-height: 50px
           letter-spacing: 1.6px
           a:active, a:focus, a:visited
             color: $gray-deep-light
-      &.menu__items--active
-        opacity: 1
-        pointer-events: auto
+          &::before, &::after
+            content: ""
+            position: absolute
+            width: 0
+            height: 1px
+            background-color: $gray-deep-light
+            transition: .4s
+          &::after
+            bottom: 0
+            right: 0
+          &:hover::before, &:hover::after
+            width: 100%
 
+        &:first-child
+          & > li:last-child
+            a
+              display: inline-block
+            img
+              max-width: 12px
+              margin-left: 8px
+              margin-bottom: 6px
+              +breakpoint-min($min-width-xl)
+                max-width: 14px
+                margin-left: 12px
+                margin-bottom: 8px
+        &:last-child
+          display: flex
+          flex-direction: row
+          justify-content: center
+          width: 100%
+          & > li
+            width: 12%
+            text-align: center
+      &.menu__items--active
+        border-right: 1px solid rgba(255, 255, 255, 0.3)
+        transform: translateX(0)
+        pointer-events: auto
   .header__middle 
     display: block
     .header__middle--img
+      width: 18vw
+      min-width: 160px
+      +margin-x(auto)
+      margin-top: 2%
       opacity: 1
-      transform: scale(0.7)
       transition: all 1s ease-out
-      +breakpoint-min($min-width-lg)
-        transform: scale(0.9)
       +breakpoint-min($min-width-xl)
+        width: 188px
+        margin-top: 0
         opacity: 0
-        transform: scale(1)
       img
         display: block
         +breakpoint-min($min-width-xl)
@@ -90,10 +139,24 @@ nav
         +margin-x(24px)
         &:first-child
           margin-left: 50px
-        a
-          font-family: $font-family-en
-          line-height: 50px
-          letter-spacing: 1.6px
+        &:not(:nth-child(3))
+          a
+            position: relative
+            font-family: $font-family-en
+            line-height: 40px
+            letter-spacing: 1.6px
+            &::before, &::after
+              content: ""
+              position: absolute
+              width: 0
+              height: 1px
+              background-color: $gray-deep-light
+              transition: .4s
+            &::after
+              bottom: 0
+              right: 0
+            &:hover::before, &:hover::after
+              width: 100%
         a:active, a:focus, a:visited
           color: $gray-deep-light
       +breakpoint-min($min-width-xl)
@@ -106,6 +169,7 @@ nav
     border-left: 1px solid rgba(255, 255, 255, 0.3)
     .header__right--img
       width: 18px
+      +margin-x(auto)
       margin-bottom: 8px
     .header__right--text
       font-size: 12px
