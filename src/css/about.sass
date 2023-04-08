@@ -1,0 +1,226 @@
+.about
+  // margin-top: 62px
+  +breakpoint-min($min-width-xxl)
+    // margin-top: 80px
+    padding-top: 20px
+  .content__wrap
+    padding-left: 0
+    padding-right: 0
+    margin-top: 60px
+    .box
+      display: flex
+      flex-direction: column
+      +breakpoint-min($min-width-xl)
+        flex-direction: row
+      .box__img
+        width: 100%
+        +breakpoint-min($min-width-xl)
+          width: 35%
+      .box__content
+        width: 100%
+        +breakpoint-min($min-width-xl)
+          width: 65%
+        
+    .box__content
+      position: relative
+      .box__content--top
+        +flex-container(center)
+        flex-direction: row
+        flex-wrap: wrap-reverse
+        width: calc(100% - 20px)
+        +padding-y(15%, 10%)
+        +margin-x(auto)
+        writing-mode: unset
+        text-orientation: mixed
+        +breakpoint-min($min-width-lg)
+          align-items: start
+          width: calc(100% - 100px)
+          +padding-y(10%)
+        +breakpoint-min($min-width-xl)
+          flex-direction: column-reverse
+          flex-wrap: wrap
+          width: 100%
+          max-height: 880px
+          writing-mode: tb
+          text-orientation: mixed
+        & > p,
+        & > h3,
+        & > div
+          width: 100%
+          +breakpoint-min($min-width-xl)
+            width: auto
+        
+        .box__content--subtitle
+          margin-bottom: 20px
+          margin-left: 0
+          font-family: sans-serif
+          font-size: 14px
+          letter-spacing: 0.8px
+          text-align: center
+          color: $gray-deep-light
+          +breakpoint-min($min-width-xl)
+            margin-bottom: 0px
+            margin-left: 10px
+            font-size: 16px
+            text-align: left
+        .box__content--title
+          position: relative
+          +flex-container(center)
+          +size(100%, 24%)
+          min-height: 10px
+          padding: 2%
+          margin-left: 0
+          background-color: rgba(0, 0, 0, 0.6)
+          font-size: 18px
+          +breakpoint-min($min-width-lg)
+            +size(50%, 56%)
+            font-size: 24px
+          +breakpoint-min($min-width-xl)
+            max-width: 130px
+            margin-left: 8%
+            +size(15%, 410px)
+          span:first-of-type
+            margin-bottom: 0
+            +breakpoint-min($min-width-xl)
+              margin-bottom: 32px
+          span:last-of-type
+            letter-spacing: 1.5px
+            text-orientation: sideways-right
+          &::before,
+          &::after
+            content: ""
+            position: absolute
+            +size(90%, 86%)
+            border: 1px solid rgba(255, 255, 255, 1)
+            +breakpoint-min($min-width-xl)
+              +size(82%, 90%)
+          &::before
+            top: 0.5%
+            left: 3.5%
+            +breakpoint-min($min-width-xl)
+              top: 3.5%
+          &::after
+            top: 9.5%
+            left: 5.5%
+            +breakpoint-min($min-width-xl)
+              top: 5.5%
+              left: 10.5%
+        .box__content--paragraph
+          margin-top: 32px
+          // 調整該自行直行間距問題
+          font-family: serif !important
+          font-size: 14px
+          letter-spacing: 6px
+          line-height: 30px
+          +breakpoint-min($min-width-xl)
+            margin-top: 0px
+            font-size: 16px
+          +breakpoint-min($min-width-4xl)
+            margin-top: 4px
+            font-size: 18px
+            letter-spacing: 9px
+          &:last-of-type
+            margin-left: 0
+            +breakpoint-min($min-width-xl)
+              margin-left: 8%
+
+      .box__content--bottom
+        position: absolute
+        bottom: 4%
+        left: 50%
+        transform: translateX(-50%)
+        +breakpoint-min($min-width-xl)
+          bottom: 8%
+
+  .section-2
+    .section__wrap
+      text-align: center
+
+  .section-3
+    .section__wrap
+      background-image: linear-gradient(45deg, transparent, transparent)
+      background-size: 100%
+      background-repeat: no-repeat
+    .section__zone
+      position: relative
+      &::before
+        content: ""
+        display: block
+        width: 100%
+        padding-bottom: 800px
+        +breakpoint-min($min-width-lg)
+          padding-bottom: 900px
+        +breakpoint-min($min-width-xl)
+          padding-bottom: 1180px
+    .decor__wrap
+      position: absolute
+      top: 66%
+      left: 2vw
+      +size(96vw, auto)
+      +breakpoint-min($min-width-sm)
+        top: 64%
+      +breakpoint-min($min-width-lg)
+        top: 48%
+        left: calc(50% - 468px)
+        width: auto
+    .text__wrap
+      position: absolute
+      top: 0
+      left: 3%
+      display: flex
+      justify-content: center
+      +size(94%, auto)
+      padding-top: 8%
+      background-color: rgba(0, 0, 0, 0.3)
+      +breakpoint-min($min-width-xl)
+        left: 15%
+        +size(70%, 930px)
+        padding-top: 0
+
+      .text__box
+        display: flex
+        flex-direction: column
+        width: 84%
+        +breakpoint-min($min-width-xxl)
+          width: 100%
+          padding: 10% 12%
+        h2,
+        h5
+          text-align: center
+          +breakpoint-min($min-width-xl)
+            text-align: left
+        h2
+          margin-bottom: 20px
+          font-size: 18px
+          +breakpoint-min($min-width-xl)
+            font-size: 24px
+        p
+          margin-bottom: 60px
+          font-size: 14px
+          color: $gray-light
+          letter-spacing: 6px
+          line-height: 30px
+          +breakpoint-min($min-width-xl)
+            font-size: 18px
+            line-height: 50px
+        &::before,
+        &::after
+          content: ""
+          position: absolute
+          width: 95%
+          height: 92%
+          border: 1px solid $gray-deep-light
+          opacity: 0.3
+          pointer-events: none
+        &::before
+          top: 3%
+          left: 2%
+          +breakpoint-min($min-width-xl)
+            top: 3%
+            left: 1.7%
+        &::after
+          top: 4%
+          left: 4%
+          +breakpoint-min($min-width-xl)
+            top: 5%
+            left: 3.3%

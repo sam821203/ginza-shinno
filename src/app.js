@@ -7,7 +7,17 @@ import "./app.sass";
 import "./vendors/js/axios";
 import "swiper/swiper-bundle.css";
 
+// ========== header ==========
+import { initHeader } from "./js/include/header";
+
+// ========== pages ==========
 import { initHome } from "./js/home";
+import { initAbout } from "./js/about";
+
+// ========== footer ==========
+// import { initFooter } from "./js/include/footer";
+
+// ========== vendors ==========
 // import { initLazyload } from "./js/lazyload";
 
 AOS.init({
@@ -208,5 +218,3 @@ AOS.init({
 //     ],
 //   });
 // }
-
-// setTimeout(initMap, 4000);

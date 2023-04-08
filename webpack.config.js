@@ -9,7 +9,7 @@ const isDev = process.env.NODE_ENV !== "production";
 
 module.exports = {
   // devtool: "source-map",
-  devtool: isDev ? "inline-source-map" : "",
+  // devtool: isDev ? "inline-source-map" : "",
   // 建置的模式，預設是 production / development
   mode: "production",
   context: path.resolve(__dirname, "src"),
@@ -95,6 +95,10 @@ module.exports = {
       //       },
       //     },
       //   ],
+      // },
+      // {
+      //   test: /\.txt/,
+      //   type: "asset/source",
       // },
     ],
   },

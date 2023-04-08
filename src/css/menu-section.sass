@@ -53,7 +53,7 @@
         .box__content--title
           position: relative
           +flex-container(center)
-          +size(24%, 80%)
+          +size(24%, 70%)
           margin-left: 60px
           background-color: rgba(0, 0, 0, 0.6)
           +breakpoint-min($min-width-xl)
@@ -86,6 +86,8 @@
 
       .box__content--bottom
         position: absolute
-        bottom: 8%
+        bottom: 4%
         left: 50%
         transform: translateX(-50%)
+        +breakpoint-min($min-width-xl)
+          bottom: 8%

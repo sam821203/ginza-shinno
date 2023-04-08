@@ -1,13 +1,9 @@
 // init Swiper:
-// import Swiper from "swiper";
-// import Swiper, { Navigation, Pagination } from "swiper";
 import Swiper from "swiper/bundle";
 
 export const initHome = [
   homeSwiperReady(),
-  scrollHeader(),
-  toggleMenu(),
-  stopEappsLinkTimer(),
+  // stopEappsLinkTimer(),
   // window.addEventListener("DOMContentLoaded", loadGoogleSyndication),
   // window.addEventListener("DOMContentLoaded", initMap),
 ];
@@ -52,7 +48,7 @@ function exeEappsLinkTimer() {
   }, 2000);
 }
 
-exeEappsLinkTimer();
+// exeEappsLinkTimer();
 
 function stopEappsLinkTimer() {
   clearTimeout(eappsLinkTimer);
@@ -70,39 +66,4 @@ function loadGoogleSyndication() {
     "beforeend",
     "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCdW_2w4vvqv2Z1uNWQv3xbGt-oZyMQSGA&callback=initMap' async defer></script>"
   );
-}
-
-function scrollHeader() {
-  const header = document.getElementById("header");
-  const headerLeft = document.getElementById("headerLeft");
-  const headerMiddleItems = document.getElementById("headerMiddleItems");
-  const headerMiddleImg = document.getElementById("headerMiddleImg");
-  const headerRight = document.getElementById("headerRight");
-  const menuItems = document.querySelector(".menu__items");
-
-  const scrollHeight = 120;
-
-  if (window.innerWidth > 960) {
-    window.addEventListener("scroll", () => {
-      const isScrolled = window.pageYOffset > scrollHeight;
-
-      header.classList.toggle("header__scroll", isScrolled);
-      menuItems.classList.remove("menu__items--active");
-      headerMiddleItems.style.opacity = isScrolled ? 0 : 1;
-      headerLeft.style.opacity = isScrolled ? 1 : 0;
-      headerLeft.style.pointerEvents = isScrolled ? "auto" : "none";
-      headerRight.style.opacity = isScrolled ? 1 : 0;
-      headerRight.style.pointerEvents = isScrolled ? "auto" : "none";
-      headerMiddleImg.style.opacity = isScrolled ? 1 : 0;
-    });
-  }
-}
-
-function toggleMenu() {
-  const headerBox = document.getElementById("headerBox");
-  const headerMenu = document.getElementById("headerMenu");
-
-  headerBox.addEventListener("click", () => {
-    headerMenu.classList.toggle("menu__items--active");
-  });
 }
