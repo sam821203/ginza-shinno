@@ -1,0 +1,44 @@
+include ./include/header.pug
+
+main.contact
+  section.section-1
+    .section__wrap.layout--main
+      .section__zone
+        .text__wrap
+          .text__box
+            h5 CONTACT 
+            h2 お問い合わせフォーム
+        form#contact-form
+          .form__group
+            label(for="name") お名氏名（漢字）
+            input#name(type="text" name="name" placeholder="三上康介 氏")
+          .form__group
+            label(for="name") 氏名（漢字）
+            input#name(type="text" name="name" placeholder="三上康介 氏")
+          .form__group
+            label(for="name") 貴社名
+            input#name(type="text" name="name" placeholder="株式會社")
+          .form__group
+            label(for="name") 所属部署名
+            input#name(type="text" name="name" placeholder="OO事業部")
+          .form__group
+            label(for="tel") お電話番号
+            input#tel(type="tel" name="tel" placeholder="0812345678")
+          .form__group
+            label(for="email") メール
+            input#email(type="email" name="email" placeholder="ABC@gmail.com")
+          .form__group
+            label(for="message") 内容
+            textarea#message(name="message" placeholder="お問い合わせ内容")
+          .form__group
+            div
+            label(class="checkbox-container " for='myCheckbox' style='color: white;')
+              a(target="_blank" href="https://www.google.com.tw/?hl=zh_TW") プライバシーポリシー
+              | に同意します
+              input#myCheckbox(type='checkbox' name='myCheckbox')
+              span.my-checkbox
+          .form__group
+            .btn__wrap
+              button.view-more(type="submit") SEND
+//- footer
+include ./include/footer.pug
