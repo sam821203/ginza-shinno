@@ -16,13 +16,18 @@
 
   .decor__wrap
     position: absolute
-    top: 77%
-    left: 2vw
+    top: 92%
+    left: -1vw
     width: 96vw
+    height: 30%
+    min-height: 200px
     +breakpoint-min($min-width-xl)
-      top: 60%
+      top: 86%
       left: 14.2%
-      +size(72%, 520px)
+      width: 72%
+    +breakpoint-min($min-width-xxl)
+      left: -10%
+      +size(120%, 520px)
     iframe
       height: 260px
       +breakpoint-min($min-width-xl)
