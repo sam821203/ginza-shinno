@@ -9,61 +9,76 @@
         content: ""
         display: block
         width: 100%
-        padding-bottom: 186%
+        padding-bottom: 174%
+        +breakpoint-min($min-width-md)
+          padding-bottom: 140%
         +breakpoint-min($min-width-lg)
           padding-bottom: 120%
         +breakpoint-min($min-width-xl)
-          padding-bottom: 104%
+          padding-bottom: 110%
         +breakpoint-min($min-width-xxl)
-          padding-bottom: 84%
-        +breakpoint-min($min-width-3xl)
+          padding-bottom: 62%
+        +breakpoint-min($min-width-4xl)
           padding-bottom: 47%
 
   .decor__wrap
-    position: absolute
+    position: static
+    z-index: -2
     top: 17.4%
     left: 48%
-    transform: translateX(300px)
-    transition: all .5s ease-out
+    +padding-x(0)
+    transform: translateX(8%)
+    transition: all 1s ease-out
+    +breakpoint-min($min-width-md)
+      +padding-x(7%)
     +breakpoint-min($min-width-xxl)
-      top: 150px
+      position: absolute
+      top: 188px
+      +padding-x(0)
     
   .text__wrap
-    position: absolute
-    top: 50%
+    position: relative
+    top: 12%
     left: 50%
     display: flex
-    // justify-content: center
-    padding-left: 6%
     +size(94%, auto)
-    background-color: rgba(0, 0, 0, 0.3)
-    +breakpoint-min($min-width-xl)
-      top: 50%
+    background-color: rgba(0, 0, 0, 0.5)
+    transform: translateX(-53.5%)
     +breakpoint-min($min-width-xxl)
-      top: 17.4%
+      position: absolute
+      top: 188px
       left: 7.3%
-      +size(50%, 580px)
-
+      +size(850px, 580px)
+      transform: none
+    .text__bg
+      position: absolute
+      z-index: -1
+      +size(100%)
+      background-color: rgba(0, 0, 0, 0)
+      backdrop-filter: blur(4px) opacity(1)
     .text__box
       display: flex
       justify-content: center
       align-items: start
       flex-direction: column
       width: 100%
-      padding: 15% 7% 13%
-      +breakpoint-min($min-width-xl)
-        +padding-x(0)
+      padding: 9% 7%
       +breakpoint-min($min-width-xxl)
-        padding: 0
+        padding-left: 10%
       p
-        margin-bottom: 12%
-        line-height: 42px
+        margin-bottom: 8%
+        font-size: 13px
+        line-height: 32px
         text-align: start
-        letter-spacing: 1.8px
+        letter-spacing: 2.4px
         +breakpoint-min($min-width-xl)
           margin-bottom: 60px
-          line-height: 50px
-          letter-spacing: 3.6px
+          font-size: 15px
+          line-height: 40px
+          letter-spacing: 3px
+        span
+          font-size: 12px
+          letter-spacing: 2.4px
           
     &::before,
     &::after
@@ -77,13 +92,13 @@
       top: 3%
       left: 2%
       +breakpoint-min($min-width-md)
-        top: 2%
+        top: 3.1%
       +breakpoint-min($min-width-xl)
-        top: 3%
+        top: 3.2%
 
     &::after
-      top: 4%
-      left: 4%
+      top: 4.8%
+      left: 3%
       +breakpoint-min($min-width-3xl)
         top: 5%
         left: 3%
@@ -97,11 +112,14 @@
   .swiper-slide 
     display: flex 
     justify-content: center 
-    align-items: center 
+    align-items: center
+    flex-direction: column-reverse
     text-align: center 
     font-size: 18px 
     background: transparent
     opacity: 0
+    +breakpoint-min($min-width-xxl)
+      flex-direction: row
     img 
       display: block 
       width: 100% 
@@ -115,34 +133,33 @@
   .swiper-slide-active
     .decor__wrap
       transform: translateX(0%)
-      opacity: 1
   .swiper-pagination
     .swiper-pagination-bullet
       display: block
 
   .swiper-pagination 
     position: absolute
-    top: 88% !important
-    left: 37% !important
+    top: 96% !important
+    left: 50% !important
     display: flex
     justify-content: space-between
     align-items: center
-    width: 28% !important
-    margin: 0 
-    +breakpoint-min($min-width-lg)
-      width: 16% !important
-      left: 42% !important
-    +breakpoint-min($min-width-xl)
-      top: 38.2% !important
-      left: 0 !important
+    width: 60px !important
+    margin: 0
+    transform: translateX(-50%)
+    +breakpoint-min($min-width-md)
+      width: 80px !important
+    +breakpoint-min($min-width-xxl)
+      top: 410px !important
+      left: 1% !important
       display: block
       width: 12px !important
       height: fit-content
+      transform: none
 
   .swiper-pagination-bullet 
     position: relative
-    width: 100%
-    height: 12px 
+    +size(8px) 
     margin: 0 !important
     font-size: 20px
     letter-spacing: 1px
@@ -152,7 +169,11 @@
     border-radius: 50px
     border: 1px solid $gray-deep-light
     opacity: 1 !important
-    +breakpoint-min($min-width-xl)
+    +breakpoint-min($min-width-xxl)
+      +size(10px) 
+    +breakpoint-min($min-width-xxl)
+      width: 100%
+      height: 12px
       margin-bottom: 16px !important
       text-align: left
 
@@ -166,15 +187,30 @@
 
   .swiper-button-prev,
   .swiper-button-next
-    left: 58.2%
+    left: 93%
+    display: none
     +size(36px)
     color: $cta-text
     background-color: rgb(10, 10, 10)
     transform: rotate(90deg)
     &::after
       font-size: 12px
+    +breakpoint-min($min-width-lg)
+      display: flex
+    +breakpoint-min($min-width-xxl)
+      left: 960px
+    +breakpoint-min($min-width-3xl)
+      left: 988px
 
   .swiper-button-prev
-    top: 66.4%
+    top: 74.6%
+    +breakpoint-min($min-width-xl)
+      top: 75.6%
+    +breakpoint-min($min-width-xxl)
+      top: 710px
   .swiper-button-next
-    top: 70.4%
+    top: 80.4%
+    +breakpoint-min($min-width-lg)
+      top: 79.4%
+    +breakpoint-min($min-width-xxl)
+      top: 753px

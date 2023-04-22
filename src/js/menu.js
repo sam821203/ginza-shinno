@@ -6,21 +6,14 @@ export const initMenu = [
 ];
 
 function menuSwiperReady() {
-  let sliders;
-  if (window.innerWidth > 960) {
-    sliders = ["01 銀座", "02 料理", "03 ランチ", "04 ドリンク", "05 コース"];
-  } else {
-    sliders = ["•", "•", "•", "•", "•"];
-  }
-
   var swiper = new Swiper("#menuSwiper", {
     centeredSlides: true,
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     loop: true,
-    // speed: 600,
+    speed: 1200,
     effect: "fade",
     fadeEffect: {
       crossFade: true,
@@ -28,9 +21,6 @@ function menuSwiperReady() {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
-      // renderBullet: function (index, className) {
-      //   return '<div class="' + className + '">' + sliders[index] + "</div>";
-      // },
     },
     navigation: {
       nextEl: '.swiper-button-next',
