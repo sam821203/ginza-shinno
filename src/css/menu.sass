@@ -1,0 +1,180 @@
+.menu
+  .section__wrap
+    background-image: linear-gradient(45deg, transparent, transparent)
+    background-size: 100%
+    background-repeat: no-repeat
+    .section__zone
+      position: relative
+      &::before
+        content: ""
+        display: block
+        width: 100%
+        padding-bottom: 186%
+        +breakpoint-min($min-width-lg)
+          padding-bottom: 120%
+        +breakpoint-min($min-width-xl)
+          padding-bottom: 104%
+        +breakpoint-min($min-width-xxl)
+          padding-bottom: 84%
+        +breakpoint-min($min-width-3xl)
+          padding-bottom: 47%
+
+  .decor__wrap
+    position: absolute
+    top: 17.4%
+    left: 48%
+    transform: translateX(300px)
+    transition: all .5s ease-out
+    +breakpoint-min($min-width-xxl)
+      top: 150px
+    
+  .text__wrap
+    position: absolute
+    top: 50%
+    left: 50%
+    display: flex
+    // justify-content: center
+    padding-left: 6%
+    +size(94%, auto)
+    background-color: rgba(0, 0, 0, 0.3)
+    +breakpoint-min($min-width-xl)
+      top: 50%
+    +breakpoint-min($min-width-xxl)
+      top: 17.4%
+      left: 7.3%
+      +size(50%, 580px)
+
+    .text__box
+      display: flex
+      justify-content: center
+      align-items: start
+      flex-direction: column
+      width: 100%
+      padding: 15% 7% 13%
+      +breakpoint-min($min-width-xl)
+        +padding-x(0)
+      +breakpoint-min($min-width-xxl)
+        padding: 0
+      p
+        margin-bottom: 12%
+        line-height: 42px
+        text-align: start
+        letter-spacing: 1.8px
+        +breakpoint-min($min-width-xl)
+          margin-bottom: 60px
+          line-height: 50px
+          letter-spacing: 3.6px
+          
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      +size(95%, 92%)
+      border: 1px solid $gray-deep-light
+      opacity: 0.3
+      pointer-events: none
+    &::before
+      top: 3%
+      left: 2%
+      +breakpoint-min($min-width-md)
+        top: 2%
+      +breakpoint-min($min-width-xl)
+        top: 3%
+
+    &::after
+      top: 4%
+      left: 4%
+      +breakpoint-min($min-width-3xl)
+        top: 5%
+        left: 3%
+
+  .swiper
+    position: absolute
+    top: 0
+    width: 100% 
+    height: 100% 
+    overflow: hidden
+  .swiper-slide 
+    display: flex 
+    justify-content: center 
+    align-items: center 
+    text-align: center 
+    font-size: 18px 
+    background: transparent
+    opacity: 0
+    img 
+      display: block 
+      width: 100% 
+      height: 100% 
+      // object-fit: cover 
+      // transform: scale(1.07)
+      // transition: transform 5s linear
+    // &.swiper-slide-active
+    //   img
+    //     transform: scale(1)
+  .swiper-slide-active
+    .decor__wrap
+      transform: translateX(0%)
+      opacity: 1
+  .swiper-pagination
+    .swiper-pagination-bullet
+      display: block
+
+  .swiper-pagination 
+    position: absolute
+    top: 88% !important
+    left: 37% !important
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 28% !important
+    margin: 0 
+    +breakpoint-min($min-width-lg)
+      width: 16% !important
+      left: 42% !important
+    +breakpoint-min($min-width-xl)
+      top: 38.2% !important
+      left: 0 !important
+      display: block
+      width: 12px !important
+      height: fit-content
+
+  .swiper-pagination-bullet 
+    position: relative
+    width: 100%
+    height: 12px 
+    margin: 0 !important
+    font-size: 20px
+    letter-spacing: 1px
+    text-align: center
+    line-height: 160%
+    color: #fff 
+    border-radius: 50px
+    border: 1px solid $gray-deep-light
+    opacity: 1 !important
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 16px !important
+      text-align: left
+
+  .swiper-pagination-bullet-active
+    background-color: $cta-text
+    border: 1px solid $cta-text
+
+    &::after
+      width: 150px
+      height: 1px
+
+  .swiper-button-prev,
+  .swiper-button-next
+    left: 58.2%
+    +size(36px)
+    color: $cta-text
+    background-color: rgb(10, 10, 10)
+    transform: rotate(90deg)
+    &::after
+      font-size: 12px
+
+  .swiper-button-prev
+    top: 66.4%
+  .swiper-button-next
+    top: 70.4%

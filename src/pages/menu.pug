@@ -1,0 +1,38 @@
+include ./include/header.pug
+
+main.menu
+  section
+    .section__wrap.layout--main
+      .section__zone
+        .swiper.mySwiper#menuSwiper
+          ul.swiper-wrapper
+            li.swiper-slide
+              .decor__wrap
+                img(src="assets/current/menu-slider-1.png", alt="")
+              .text__wrap
+                .text__box
+                  h5 01 DISH
+                  h2 料理
+                  p
+                    | ¥1580円   ・しんのうサラダ
+                    br
+                    | ¥680円    ・パン・デ薬膳（スパイスパウンドケーキ）
+                    br
+                    | ¥2680円   ・タンドリーチキン
+                  .view-more 
+                    a(href="") ALL DISH MENU
+
+            li.swiper-slide
+              img(src='assets/current/hero-slider-2.jpg')
+            li.swiper-slide
+              img(src='assets/current/hero-slider-3.jpg')
+            li.swiper-slide
+              img(src='assets/current/hero-slider-4.jpg')
+            li.swiper-slide
+              img(src='assets/current/hero-slider-5.jpg')
+          .swiper-pagination
+          .swiper-button-prev
+          .swiper-button-next
+        
+//- footer
+include ./include/footer.pug

@@ -13,6 +13,7 @@ import { initHeader } from "./js/include/header";
 // ========== pages ==========
 import { initHome } from "./js/home";
 import { initAbout } from "./js/about";
+import { initMenu } from "./js/menu";
 
 // ========== footer ==========
 // import { initFooter } from "./js/include/footer";

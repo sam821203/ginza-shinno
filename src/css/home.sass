@@ -1,79 +1,80 @@
-.swiper 
-	width: 100% 
-	height: 100% 
-	overflow: hidden
-.swiper-slide 
-	display: flex 
-	justify-content: center 
-	align-items: center 
-	text-align: center 
-	font-size: 18px 
-	background: #fff 
-	img 
-		display: block 
+.decor__bg
+	.swiper 
 		width: 100% 
 		height: 100% 
-		object-fit: cover 
-		transform: scale(1.07)
-		transition: transform 5s linear
-	&.swiper-slide-active
-		img
-			transform: scale(1)
+		overflow: hidden
+	.swiper-slide 
+		display: flex 
+		justify-content: center 
+		align-items: center 
+		text-align: center 
+		font-size: 18px 
+		background: #fff 
+		img 
+			display: block 
+			width: 100% 
+			height: 100% 
+			object-fit: cover 
+			transform: scale(1.07)
+			transition: transform 5s linear
+		&.swiper-slide-active
+			img
+				transform: scale(1)
 
-.swiper-pagination
-	.swiper-pagination-bullet
-		display: block
+	.swiper-pagination
+		.swiper-pagination-bullet
+			display: block
 
-.swiper-pagination 
-	position: absolute
-	top: 88% !important
-	left: 37% !important
-	display: flex
-	justify-content: space-between
-	align-items: center
-	width: 28% !important
-	margin: 0 
-	+breakpoint-min($min-width-lg)
-		width: 16% !important
-		left: 42% !important
-	+breakpoint-min($min-width-xl)
-		top: 66.5% !important
-		left: 78% !important
-		display: block
-		width: 150px !important
-	+breakpoint-min($min-width-3xl)
-		left: 86.8% !important
-
-.swiper-pagination-bullet 
-	position: relative
-	width: 100%
-	height: 30px 
-	margin: 0 !important
-	background-color: transparent
-	font-size: 20px
-	letter-spacing: 1px
-	text-align: center
-	line-height: 160%
-	color: #fff 
-	border-radius: 0
-	opacity: 0.5
-	+breakpoint-min($min-width-xl)
-		margin-bottom: 16px !important
-		text-align: left
-	&::after
+	.swiper-pagination 
 		position: absolute
-		left: 0
-		bottom: 0
-		width: 0px
-		height: 1px
-		background-color: #fff
-		transition: width .8s ease-out
+		top: 88% !important
+		left: 37% !important
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 28% !important
+		margin: 0 
+		+breakpoint-min($min-width-lg)
+			width: 16% !important
+			left: 42% !important
 		+breakpoint-min($min-width-xl)
-			content: ""
+			top: 66.5% !important
+			left: 78% !important
+			display: block
+			width: 150px !important
+		+breakpoint-min($min-width-3xl)
+			left: 86.8% !important
 
-.swiper-pagination-bullet-active 
-	background-color: transparent
-	opacity: 1 
-	&::after
-		width: 150px
-		height: 1px
+	.swiper-pagination-bullet 
+		position: relative
+		width: 100%
+		height: 30px 
+		margin: 0 !important
+		background-color: transparent
+		font-size: 20px
+		letter-spacing: 1px
+		text-align: center
+		line-height: 160%
+		color: #fff 
+		border-radius: 0
+		opacity: 0.5
+		+breakpoint-min($min-width-xl)
+			margin-bottom: 16px !important
+			text-align: left
+		&::after
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 0px
+			height: 1px
+			background-color: #fff
+			transition: width .8s ease-out
+			+breakpoint-min($min-width-xl)
+				content: ""
+
+	.swiper-pagination-bullet-active 
+		background-color: transparent
+		opacity: 1 
+		&::after
+			width: 150px
+			height: 1px

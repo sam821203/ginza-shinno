@@ -1,4 +1,4 @@
-// init Swiper:
+// init Swiper
 import Swiper from "swiper/bundle";
 
 export const initHome = [
@@ -16,7 +16,7 @@ function homeSwiperReady() {
     sliders = ["•", "•", "•", "•", "•"];
   }
 
-  var swiper = new Swiper(".mySwiper", {
+  var swiper = new Swiper("#heroSwiper", {
     centeredSlides: true,
     autoplay: {
       delay: 3000,
