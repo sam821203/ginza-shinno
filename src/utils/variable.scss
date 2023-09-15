@@ -1,7 +1,12 @@
+:root {
+  --gray-deep-dark: rgb(10, 10, 10)
+  --gray-deep-light: #fff
+}
+
 // Gray series
 // ==========================================================================
-$gray-deep-dark: rgb(10, 10, 10);
-$gray-deep-light: #fff;
+$gray-deep-dark: var(--gray-deep-dark);
+$gray-deep-light: var(--gray-deep-light);
 $gray-light: rgb(170, 170, 170);
 
 $cta-text: rgb(217, 181, 74);
@@ -45,3 +50,4 @@ $max-width-3xl: 1440px;
 $min-width-4xl: 1920px;
 $max-width-5xl: 2560px;
 $min-width-6xl: 3840px;
+

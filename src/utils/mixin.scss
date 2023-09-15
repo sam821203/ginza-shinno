@@ -1,3 +1,19 @@
+// @use 'sass:meta';
+// @use "variable.scss" as variable;
+// $variable: meta.module-variables('variable');
+
+// @mixin add-css-variables($module) {
+//   :root {
+//     @each $name, $value in $module {
+//       --#{$name}: #{$value};
+//     }
+//   }
+// }
+
+// // Usages
+// @include add-css-variables($variable);
+
+
 // breakpoint
 // ==========================================================================
 @mixin breakpoint-min($point) {
